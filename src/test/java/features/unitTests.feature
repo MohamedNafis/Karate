@@ -11,12 +11,11 @@ Feature: Unit Tests
     * def getCurrentDate = utils.getDate()
     * print getCurrentDate
 
-  
   Scenario: Calling another scenario from different feature file
-    * def getStudents = call read('classpath:features/getCalls.feature@get-student')
+    * def getStudents = call read('classpath:features/getCall.feature@get-student')
     * print getStudents.response
-    
-    @helper
-    Scenario: Calling another scenario from different feature file
+
+  @helper
+  Scenario: Calling another scenario from helper feature 
     * def getStudents = call read('classpath:helper/helper.feature@get-student-helper'){'urlPath':'http://localhost:3000'}
     * print getStudents.response
